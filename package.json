@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@asyncapi/avro-schema-parser": "file:../../avro-schema-parser",
+    "@asyncapi/parser": "^2.0.0-next-major.7"
+  },
+  "module": "esm/index.js",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}
