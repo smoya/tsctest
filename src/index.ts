@@ -1,5 +1,5 @@
-import { Input, Parser } from '@asyncapi/parser';
-import { AvroSchemaParser } from '@asyncapi/avro-schema-parser/esm';
+import { Parser } from '@asyncapi/parser';
+import { AvroSchemaParser } from '@asyncapi/avro-schema-parser';
 
 const parser = new Parser();
 parser.registerSchemaParser(AvroSchemaParser()); 
@@ -18,11 +18,9 @@ channels:
           type: notAValidAvroType
 `;
 
-async function validate(doc: Input) {
-  const { document, diagnostics } = await parser.parse(doc);
+async function validate() {
+  const { diagnostics } = await parser.parse(asyncapiWithInvalidAvro);
   console.log(diagnostics);
+  console.log("DONE");
 }
-
-validate(asyncapiWithInvalidAvro);
-
-console.log("DONE");
+validate();

@@ -1,9 +1,13 @@
 {
+  "scripts": {
+    "start": "npm run build && npm run start:app",
+    "start:app": "node ./lib/index.js",
+    "build": "tsc"
+  },
   "dependencies": {
-    "@asyncapi/avro-schema-parser": "file:../../avro-schema-parser",
+    "@asyncapi/avro-schema-parser": "file:../../../../AsyncAPI/avro-schema-parser/asyncapi-avro-schema-parser-2.0.0.tgz",
     "@asyncapi/parser": "^2.0.0-next-major.7"
   },
-  "module": "esm/index.js",
   "devDependencies": {
     "typescript": "^4.8.4"
   }
